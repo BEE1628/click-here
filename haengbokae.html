@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You Again</title>
+
+<style>
+body{
+  background:linear-gradient(135deg,#ffb6d9,#ffd6eb);
+  text-align:center;
+  font-family:Arial;
+  padding-top:100px;
+}
+
+/* tombol home */
+#backBtn{
+  display:none;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:#555;
+  color:white;
+  cursor:pointer;
+  opacity:0;
+  transition:0.5s;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>🎶 I hope you like it </h2>
+
+<p> Thank you for being you...</p>
+
+<!-- PICT -->
+<img src="gif8.gif">
+
+<br><br>
+
+<!-- MUSIK -->
+
+<audio autoplay controls>
+  <source src="LOVE.mp3">
+</audio>
+
+<br><br>
+
+<button onclick="goFinal()" style="
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#4CAF50;
+color:white;
+cursor:pointer;
+">
+💖 Replay again
+</button>
+
+<button id="backBtn" onclick="goHome()">🏠 Stay a little longer?</button>
+
+
+<script>
+function goFinal(){
+  window.location.href = "28MAR2026.html";
+}
+
+function goHome(){
+  window.location.href = "click-here.html";
+}
+
+setTimeout(() => {
+  let btn = document.getElementById("backBtn");
+  btn.style.display = "inline-block";
+
+  setTimeout(()=>{
+    btn.style.opacity = 1;
+  },100);
+}, 3000);
+</script>
+
+</body>
+</html>
