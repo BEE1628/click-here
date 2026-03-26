@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SHMILY</title>
+
+<style>
+body{
+  background:linear-gradient(135deg,#ffb6d9,#ffd6eb);
+  font-family:Arial;
+  text-align:center;
+  padding-top:100px;
+}
+
+button{
+  padding:12px 25px;
+  margin:10px;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+#yes{
+  background:#4CAF50;
+  color:white;
+}
+
+#no{
+  background:#ff4d4d;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Don't be curious... but will you open this?</h2>
+
+<!-- GANTI DENGAN FOTO / GAMBAR YANG DIA SUKA -->
+<img id="gifImage" src="gif1.gif" width="200">
+
+<button id="yes" onclick="yesClick()">Yes 💖</button>
+<button id="no" onclick="noClick()">No 😳</button>
+
+<script>
+
+let noCount = 0;
+let yesCount = 0;
+
+const gifImage = document.getElementById("gifImage");
+
+const yesGifs = [
+  "gif11.gif",
+  "gif6.gif",
+];
+
+const noGifs = [
+  "gif3.gif",
+  "gif4.gif",
+  "gif7.gif",
+  "gif5.gif",
+];
+
+function noClick(){
+  noCount++;
+
+gifImage.src = noGifs[noCount % noGifs.length];
+
+  if(noCount == 1){
+    document.querySelector("h2").innerText = "Are you sure you don’t want to see it?";
+  }
+  else if(noCount == 2){
+    document.querySelector("h2").innerText = "It’s actually really special...";
+  }
+    else if(noCount == 3){
+    document.querySelector("h2").innerText = "Do you want me to help you out?";
+  }
+  else if(noCount == 4){
+  document.querySelector("h2").innerText = "See… now you’re curious, aren’t you?";
+
+  // 🔥 UBAH TOMBOL JADI YES & YES
+  document.getElementById("yes").innerText = "Yes (I'm curious) 🧐 ";
+  document.getElementById("no").innerText = "Yes (I had no choice) 😏";
+
+  // ubah fungsi tombol
+    document.getElementById("yes").onclick = function(){
+      window.location.href = "SHMILY.html";
+    };
+
+    document.getElementById("no").onclick = function(){
+      window.location.href = "28MAR2026.html";
+    };
+  }
+  else{
+    window.location.href = "28MAR2026.html";
+  }
+}
+  
+
+
+function yesClick(){
+  yesCount++;
+
+  gifImage.src = yesGifs[yesCount % yesGifs.length];
+
+  if(yesCount == 1){
+    document.querySelector("h2").innerText = "Hey, wait, are you sure?";
+  }
+  else if(yesCount == 2){
+    document.querySelector("h2").innerText = "You seriously want it....";
+  }
+  else{
+    document.body.innerHTML = ""; // 🔥 bersihin halaman dulu
+
+setTimeout(()=>{
+  window.location.href="SHMILY.html";
+},50);
+  }
+}
+
+</script>
+
+</body>
+</html>
